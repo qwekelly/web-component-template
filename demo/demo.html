@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components Demo</title>
+    <!-- <script src="../dist/main.js"></script> -->
+    <script type="module" src="../dist/web-ui.esm.js"></script>
+  </head>
+  <body>
+    <!-- <div class="page-title">🔥Web Components 组件库演示</div> -->
+
+    <button id="btn">测试</button>
+
+    <ui-card id="card"></ui-card>
+    <!-- <my-web-component></my-web-component> -->
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      let num = 0;
+      const btn = document.getElementById('btn');
+      const card = document.getElementById('card');
+
+      if (card) {
+        card.setAttribute('ui-id', num);
+        card.setAttribute('ui-name', '权威坦白说');
+        card.setAttribute('ui-position', '认真测试工程师');
+        card.setAttribute('ui-desc', '请问这个数据量采集的是所有库里的data，还是只采集逻辑库中的数据？我理解的是逻辑库数据。');
+      }
+
+      btn && btn.addEventListener('click', () => {
+        num += 1;
+        card.setAttribute('ui-id', num);
+      });
+    });
+
+  </script>
+</html>
